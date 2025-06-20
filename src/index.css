@@ -51,17 +51,17 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%; /* Updated: Pure black */
+    --foreground: 210 40% 98%; /* Kept: Near white for contrast */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%; /* Updated: Very dark gray for distinction from black background */
+    --card-foreground: 210 40% 98%; /* Kept: Near white */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%; /* Updated: Very dark gray, consistent with card */
+    --popover-foreground: 210 40% 98%; /* Kept: Near white */
 
-    --primary: 217 91% 60%; /* Updated: Lighter blue for dark mode accent */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Existing: Good contrast on new dark primary */
+    --primary: 217 91% 60%; 
+    --primary-foreground: 222.2 47.4% 11.2%; 
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -75,9 +75,9 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 217 91% 60%; /* Updated: Aligned with new dark primary for focus */
+    --border: 217.2 32.6% 17.5%; /* Existing dark border, might need to be slightly lighter if elements become hard to see */
+    --input: 217.2 32.6% 17.5%; /* Existing dark input, might need to be slightly lighter */
+    --ring: 217 91% 60%; 
 
     /* Sidebar variables for dark mode (unchanged) */
     --sidebar-background: 240 5.9% 10%;
