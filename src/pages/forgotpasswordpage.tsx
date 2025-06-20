@@ -47,7 +47,7 @@ const ForgotPasswordPage: React.FC = () => {
   };
 
   const alertComponent = message && messageType && (
-    <Alert variant={messageType === 'error' ? 'destructive' : 'default'} className={messageType === 'success' ? 'bg-green-50 border-green-300 text-green-700' : ''}>
+    <Alert variant={messageType === 'error' ? 'destructive' : 'default'} className={messageType === 'success' ? 'bg-green-50 border-green-300 text-green-700 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300' : ''}>
       {messageType === 'success' ? <CheckCircle2 className="h-4 w-4" /> : <AlertTriangle className="h-4 w-4" />}
       <AlertTitle>{messageType === 'success' ? 'Email Sent' : 'Error'}</AlertTitle>
       <AlertDescription>{message}</AlertDescription>
@@ -55,7 +55,7 @@ const ForgotPasswordPage: React.FC = () => {
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-background"> {/* Updated to use bg-background for theme compliance */}
       <AuthHeader />
       <main className="flex-grow flex flex-col items-center justify-center p-4">
         <AuthFormCard
@@ -63,7 +63,7 @@ const ForgotPasswordPage: React.FC = () => {
           description="No problem. Enter your email address below and we'll send you instructions to reset your password."
           alertMessage={alertComponent}
           actionButton={
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" form="forgot-password-form" className="w-full" disabled={isLoading}> {/* Added form attribute */}
               {isLoading ? 'Sending...' : 'Send Reset Link'}
             </Button>
           }
@@ -76,7 +76,7 @@ const ForgotPasswordPage: React.FC = () => {
             </p>
           }
         >
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} id="forgot-password-form" className="space-y-4"> {/* Added id attribute */}
             <div className="space-y-2">
               <Label htmlFor="email">Email Address</Label>
               <div className="relative">
