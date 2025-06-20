@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import BrandLogo from '@/components/BrandLogo'; // Assuming BrandLogo is in src/components/BrandLogo.tsx
+import BrandLogo from '@/components/BrandLogo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Search, UserCircle, LogOut, Settings, LayoutDashboard } from 'lucide-react';
+import { ThemeToggleButton } from '@/components/ThemeToggleButton'; // Added import
 
 const AppHeader: React.FC = () => {
   console.log('AppHeader loaded');
@@ -42,14 +43,11 @@ const AppHeader: React.FC = () => {
               Dashboard
             </NavLink>
             {/* Add other primary navigation links here if any, e.g.
-            <NavLink to="/other-feature" className={navLinkClasses}>
-              Other Feature
-            </NavLink>
-            */}
+            <NavLink to="/other-feature" className={navLinkClasses}>\n              Other Feature\n            </NavLink>\n            */}
           </nav>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2"> {/* Adjusted gap for new button */}
           <div className="relative hidden sm:block">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -58,6 +56,8 @@ const AppHeader: React.FC = () => {
               className="pl-8 sm:w-[200px] md:w-[300px] lg:w-[300px]"
             />
           </div>
+
+          <ThemeToggleButton /> {/* Added Theme Toggle Button */}
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
